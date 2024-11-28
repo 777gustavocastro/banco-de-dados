@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Empresas</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Empresas</h1>
+      <nav>
+        <button onclick="fetchEmpresas()">Visão Geral</button>
+        <button onclick="showDetails()">Detalhes da Empresa</button>
+        <button onclick="manageEmpresas()">Gerenciamento</button>
+      </nav>
+    </header>
+    <main id="main-content">
+      <ul id="empresas-list"></ul>
+    </main>
+  </div>
+  <script>
+    async function fetchEmpresas() {
+      const response = await fetch('/api/empresas');
+      const empresas = await response.json();
+      const list = document.getElementById('empresas-list');
+      list.innerHTML = '';
+
+      empresas.forEach(empresa => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+          <img src="${empresa.logo_url}" alt="${empresa.name}" class="logo">
+          <span>${empresa.name}</span>
+          <span class="status ${empresa.status === 'ativo' ? 'active' : 'inactive'}"></span>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    fetchEmpresas();
+  </script>
+</body>
+</html>

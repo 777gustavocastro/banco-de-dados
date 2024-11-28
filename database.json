@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Tech Solutions",
+    "location": "São Paulo, SP",
+    "sector": "Tecnologia",
+    "contact": "contato@techsolutions.com",
+    "logo_url": "/logos/techsolutions.png",
+    "status": "ativo"
+  },
+  {
+    "id": 2,
+    "name": "Green Corp",
+    "location": "Rio de Janeiro, RJ",
+    "sector": "Energia Renovável",
+    "contact": "contato@greencorp.com",
+    "logo_url": "/logos/greencorp.png",
+    "status": "inativo"
+  },
+  {
+    "id": 3,
+    "name": "Educa Mais",
+    "location": "Belo Horizonte, MG",
+    "sector": "Educação",
+    "contact": "contato@educamais.com",
+    "logo_url": "/logos/educamais.png",
+    "status": "ativo"
+  }
+]
